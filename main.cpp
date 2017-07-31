@@ -18,8 +18,8 @@ class Alkalmazas
     Kivalasztott kivalasztott = semmi;
     static const int ABLAK_SZELESSEG = 640;
     static const int ABLAK_MAGASSAG = 480;
-    static constexpr SDL_Color BETUSZIN = {44, 127, 3};
-    static constexpr SDL_Color KIJELOLOSZIN =  {88,93,102};
+    const SDL_Color BETUSZIN = {44, 127, 3};
+    const SDL_Color KIJELOLOSZIN =  {88,93,102};
     static const int KIJELOLOALPHA = 130;
     SDL_Window* ablak = NULL;
     SDL_Renderer* renderer = NULL;
