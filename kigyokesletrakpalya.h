@@ -103,7 +103,7 @@ class KigyokEsLetrakPalya : public Palya
     \brief Megjelenít egy figurát egy mezőn
 
     \param mezo A mező amin meg kell jeleníteni (1-100)
-    \param figura A figura ami meg kell jeleníteni (0-5)
+    \param figura A figura amit meg kell jeleníteni (0-5)
     */
     void figuramezon(const Mezo* mezo, int figura);
 
