@@ -29,26 +29,26 @@ class Alkalmazas
 public:
     Alkalmazas()
     {
-        kezdokep = SDL_LoadBMP("kezdo2.bmp");
-        if(kezdokep == NULL)
-        {
-            std::cout << "Képhiba !!! " << SDL_GetError();
-            return;
-        }
-
         if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
         {
-            std::cout << "SDL Hiba !!! " << SDL_GetError() << std::endl;
+            std::cerr << "SDL Hiba !!! " << SDL_GetError() << std::endl;
             return;
         }
-
 
         ablak = SDL_CreateWindow( "Táblás játékok", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, ABLAK_SZELESSEG, ABLAK_MAGASSAG, SDL_WINDOW_SHOWN );
         if( ablak == NULL )
         {
-            std::cout <<  "Ablak hiba !!! " <<  SDL_GetError() << std::endl;
+            std::cerr <<  "Ablak hiba !!! " <<  SDL_GetError() << std::endl;
             return;
         }
+        
+        kezdokep = SDL_LoadBMP("kezdo2.bmp");
+        if(kezdokep == NULL)
+        {
+            std::cerr << "Képhiba !!! " << SDL_GetError();
+            return;
+        }
+        
         renderer = SDL_CreateRenderer(ablak, -1, SDL_RENDERER_ACCELERATED);
         kezdokeptexture = SDL_CreateTextureFromSurface(renderer, kezdokep);
         alappalya();
